@@ -8,7 +8,6 @@
 #ifndef INC_STM32F401XX_GPIO_H_
 #define INC_STM32F401XX_GPIO_H_
 
-#include <stdint.h>
 #include"STM32F401XX.h"
 
 /**
