@@ -112,4 +112,61 @@ struct GPIO_Conf_t
  * @}
  */
 
+/**
+ * @brief GPIO pin initialization API.
+ *
+ * @param GPIOX 	Pointer to the port to which the pin belongs
+ * @param config 	Pointer to the pin configuration structure
+ */
+void GPIO_Init(GPIO_RegMap_t *GPIOX, GPIO_Conf_t *config);
+
+/**
+ * @brief GPIO pin write API.
+ *
+ * @param GPIOX 		Pointer to the port to which the pin belongs
+ * @param value 		Value to be written
+ * @arg 0x0U 			Sets pin to low
+ * @arg 0x1U 			Sets pin to high
+ * @param pinNumber 	Pin number to be written [0x0U, 0xFU]
+ */
+void GPIO_Write(GPIO_RegMap_t *GPIOX, GPIO_PIN_STATE value, GPIO_PIN_NUMBER pinNumber);
+
+/**
+ * @brief GPIO pin read API.
+ *
+ * @param GPIOX 		Pointer to the port to which the pin belongs
+ * @param pinNumber		Pin number to be read [0x0U, 0xFU]
+ *
+ * @retval 0x0U			Pin is in low state
+ * @retval 0x1U			Pin is in high state
+ */
+GPIO_PIN_STATE GPIO_Read(GPIO_RegMap_t *GPIOX, GPIO_PIN_NUMBER pinNumber);
+
+/**
+ * @brief GPIO pin toggle API.
+ *
+ * @param GPIOX 		Pointer to the port to which the pin belongs
+ * @param pinNumber		Pin number to be toggled [0x0U, 0xFU]
+ */
+void GPIO_Toggle(GPIO_RegMap_t *GPIOX, GPIO_PIN_NUMBER pinNumber);
+
+/**
+ * @brief GPIO pin interrupt initialization API.
+ *
+ * @param GPIOX 		Pointer to the port to which the pin belongs
+ * @param pinNumber		Pin number to be initialized [0x0U, 0xFU]
+ * @param edgeTrigger 	Pin edge trigger configuration value
+ * @param IRQNumber		EXTI line number
+ * @param IRQPrioirty	EXTI line priority [0x0U, 0xFFU]
+ */
+void GPIO_IRQ_Init(GPIO_RegMap_t *GPIOX, GPIO_PIN_NUMBER pinNumber,
+					GPIO_EDGE_TRIGGER edgeTrigger, GPIO_IRQ_NUMBER IRQNumber,
+					GPIO_PRIORITY_NUMBER IRQPriority);
+
+/**
+ * @brief GPIO pin interrupt handle API.
+ *
+ * @param pinNumber		Pin number to be used [0x0U, 0xFU]
+ */
+void GPIO_IRQ_Handle(GPIO_PIN_NUMBER pinNumber);
 #endif /* INC_STM32F401XX_GPIO_H_ */
