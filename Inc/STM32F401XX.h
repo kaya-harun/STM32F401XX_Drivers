@@ -9,7 +9,6 @@
 #define INC_STM32F401XX_H_
 
 #include <stdint.h>
-#include"STM32F401XX_GPIO.h"
 
 /**
  * @brief RCC register map structure.
@@ -190,4 +189,6 @@ struct NVIC_RegMap_t
 								 x == GPIOD ? 0x3U : \
 								 x == GPIOE ? 0x4U : \
 								 x == GPIOH ? 0x5U : 0x0FFU)
+
+#include"STM32F401XX_GPIO.h"
 #endif /* INC_STM32F401XX_H_ */
