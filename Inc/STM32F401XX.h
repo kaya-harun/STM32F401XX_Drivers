@@ -9,6 +9,7 @@
 #define INC_STM32F401XX_H_
 
 #include <stdint.h>
+#include"STM32F401XX_GPIO.h"
 
 /**
  * @brief RCC register map structure.
