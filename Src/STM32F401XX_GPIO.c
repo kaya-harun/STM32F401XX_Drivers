@@ -17,7 +17,7 @@ void GPIO_Init(GPIO_RegMap_t *GPIOX, GPIO_Conf_t *config)
 	uint8_t temp, temp1;
 	temp = config->pinNumber / 8;
 	temp1 = config->pinNumber % 8;
-	GPIOX->AFR[temp] &= ~(0x15U << (4 * temp1));
+	GPIOX->AFR[temp] &= ~(0xFU << (4 * temp1));
 	GPIOX->AFR[temp] |= (config->altFunc << (4 * temp1));
 }
 
