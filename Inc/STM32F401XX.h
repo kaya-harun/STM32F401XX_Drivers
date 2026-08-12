@@ -112,11 +112,29 @@ struct NVIC_RegMap_t
 };
 
 /**
+ * @brief SPI register map structure.
+ */
+typedef struct SPI_RegMap_t SPI_RegMap_t;
+struct SPI_RegMap_t
+{
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t SR;
+	volatile uint32_t DR;
+	volatile uint32_t CRCPR;
+	volatile uint32_t RXCRCR;
+	volatile uint32_t TXCRCR;
+	volatile uint32_t I2SCFGR;
+	volatile uint32_t I2SPR;
+};
+
+/**
  * @defgroup Bus_Base_Addresses Bus base addresses
  * @{
  */
 #define AHB1_BASEADDR	0x40020000U
 #define APB2_BASEADDR 	0x40010000U
+#define APB1_BASEADDR	0x40000000U
 /**
  * @}
  */
@@ -135,6 +153,10 @@ struct NVIC_RegMap_t
 #define EXTI_BASEADDR		0x40013C00U
 #define NVIC_BASEADDR		0xE000E100U
 #define SYSCFG_BASEADDR		0x40013800U
+#define SPI1_BASEADR		0x40013000U
+#define SPI2_BASEADR		0x40003800U
+#define SPI3_BASEADR		0x40003C00U
+#define SPI4_BASEADR		0x40013400U
 /**
  * @}
  */
@@ -153,6 +175,10 @@ struct NVIC_RegMap_t
 #define EXTI	((EXTI_RegMap_t*)EXTI_BASEADDR)
 #define NVIC	((NVIC_RegMap_t*)NVIC_BASEADDR)
 #define SYSCFG 	((SYSCFG_RegMap_t*)SYSCFG_BASEADDR)
+#define SPI1	((SPI_RegMap_t*)SPI1_BASEADDR)
+#define SPI2	((SPI_RegMap_t*)SPI2_BASEADDR)
+#define SPI3	((SPI_RegMap_t*)SPI3_BASEADDR)
+#define SPI4	((SPI_RegMap_t*)SPI4_BASEADDR)
 /**
  * @}
  */
@@ -168,6 +194,10 @@ struct NVIC_RegMap_t
 #define GPIOE_CLK_EN()	(RCC->AHB1ENR |= 0x1U << 4)
 #define GPIOH_CLK_EN()	(RCC->AHB1ENR |= 0x1U << 7)
 #define SYSCFG_CLK_EN()	(RCC->APB2ENR |= 0x1U << 14)
+#define SPI1_CLK_EN()	(RCC->APB2ENR |= 0x1U << 12)
+#define SPI2_CLK_EN()	(RCC->APB1ENR |= 0x1U << 14)
+#define SPI3_CLK_EN()	(RCC->APB1ENR |= 0x1U << 15)
+#define SPI4_CLK_EN()	(RCC->APB2ENR |= 0x1U << 13)
 /**
  * @}
  */
