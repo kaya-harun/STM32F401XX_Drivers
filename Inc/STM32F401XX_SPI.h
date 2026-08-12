@@ -66,5 +66,21 @@ struct SPI_Conf_t
  * @}
  */
 
+/**
+ * @brief SPI initialization API.
+ *
+ * @param SPIX		Pointer to the SPI to be used
+ * @param config	Pointer to the SPI configuration structure
+ */
+void SPI_Init(SPI_RegMap_t *SPIX, SPI_Conf_t *config);
+
+/**
+ * @brief SPI transfer API.
+ *
+ * @param SPIX		Pointer to the SPI to be used
+ * @param config	Pointer to the SPI configuration structure
+ */
+void SPI_Transfer(SPI_RegMap_t *SPIX, SPI_Conf_t *config);
+
 
 #endif /* INC_STM32F401XX_SPI_H_ */
