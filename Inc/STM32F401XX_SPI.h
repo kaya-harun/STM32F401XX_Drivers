@@ -17,6 +17,7 @@
 typedef uint8_t SPI_MSTR;
 typedef uint8_t SPI_SSM;
 typedef uint8_t SPI_SSI;
+typedef uint8_t SPI_IRQ_NUMBER;
 /**
  * @}
  */
