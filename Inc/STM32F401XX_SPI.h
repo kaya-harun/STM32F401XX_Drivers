@@ -85,5 +85,25 @@ void SPI_Init(SPI_RegMap_t *SPIX, SPI_Conf_t *config);
  */
 void SPI_Transfer(SPI_RegMap_t *SPIX, SPI_Conf_t *config);
 
+/**
+ * @brief SPI transfer API.
+ *
+ * @param SPIX		Pointer to the SPI to be used
+ * @param config	Pointer to the SPI configuration structure
+ * @param IRQNumber	IRQ number
+ * @arg 0x23U		SPI1
+ * @arg 0x24U		SPI2
+ * @arg 0x33U		SPI3
+ * @arg	0x54U		SPI4
+ */
+void SPI_Start_Transfer_It(SPI_RegMap_t *SPIX, SPI_Conf_t *config, SPI_IRQ_NUMBER IRQNumber);
+
+/**
+ * @brief SPI interrupt handle API.
+ *
+ * @param SPIX		Pointer to the SPI to be used
+ * @param config	Pointer to the SPI configuration structure
+ */
+void SPI_IRQ_Handle(SPI_RegMap_t *SPIX, SPI_Conf_t *config);
 
 #endif /* INC_STM32F401XX_SPI_H_ */
