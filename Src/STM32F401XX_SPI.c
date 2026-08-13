@@ -7,13 +7,14 @@ void SPI_Init(SPI_RegMap_t *SPIX, SPI_Conf_t *config)
 	temp |= config->ssm << 9;
 	temp |= config->ssi << 8;
 	temp |= config->mstr << 2;
-	temp |= 0x1U << 6;
 
 	SPIX->CR1 = temp;
 }
 
 void SPI_Transfer(SPI_RegMap_t *SPIX, SPI_Conf_t *config)
 {
+	SPIX->CR1 |= 0x1U << 6;
+
 	while((config->txLen > 0) && (config->rxLen > 0))
 	{
 		while(!((SPIX->SR >> 0x1U) & 0x1U));
