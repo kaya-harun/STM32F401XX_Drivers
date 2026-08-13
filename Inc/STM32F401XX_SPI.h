@@ -35,8 +35,6 @@ struct SPI_Conf_t
 	uint8_t *pRxData;
 	uint32_t txLen;
 	uint32_t rxLen;
-	uint8_t txBusy;
-	uint8_t rxBusy;
 };
 
 /**
