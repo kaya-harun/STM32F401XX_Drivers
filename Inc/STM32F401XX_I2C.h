@@ -18,4 +18,11 @@ struct I2C_Conf_t
 {
 };
 
-#endif /* INC_STM32F401XX_I2C_H_ */
+/**
+ * @brief I2C initialization API.
+ *
+ * @param I2CX		Pointer to the I2C to be used
+ */
+void I2C_Init(I2C_RegMap_t *I2CX);
+
+#endif /* INC_STM31F401XX_I2C_H_ */
