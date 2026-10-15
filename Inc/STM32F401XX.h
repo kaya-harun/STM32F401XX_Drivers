@@ -222,9 +222,9 @@ struct I2C_RegMap_t
 #define SPI2_CLK_EN()	(RCC->APB1ENR |= 0x1U << 14)
 #define SPI3_CLK_EN()	(RCC->APB1ENR |= 0x1U << 15)
 #define SPI4_CLK_EN()	(RCC->APB2ENR |= 0x1U << 13)
-#define I2C1_CLK_EN()	(RCC->AP1ENR |= 0x1U << 21)
-#define I2C2_CLK_EN()	(RCC->AP1ENR |= 0x1U << 22)
-#define I2C3_CLK_EN()	(RCC->AP1ENR |= 0x1U << 23)
+#define I2C1_CLK_EN()	(RCC->APB1ENR |= 0x1U << 21)
+#define I2C2_CLK_EN()	(RCC->APB1ENR |= 0x1U << 22)
+#define I2C3_CLK_EN()	(RCC->APB1ENR |= 0x1U << 23)
 /**
  * @}
  */
@@ -251,4 +251,5 @@ struct I2C_RegMap_t
 
 #include"STM32F401XX_GPIO.h"
 #include "STM32F401XX_SPI.h"
+#include "STM32F401XX_I2C.h"
 #endif /* INC_STM32F401XX_H_ */
