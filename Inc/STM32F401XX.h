@@ -134,16 +134,16 @@ struct SPI_RegMap_t
 typedef struct I2C_RegMap_t I2C_RegMap_t;
 struct I2C_RegMap_t
 {
-	volatile uint32_t I2C_CR1;
-	volatile uint32_t I2C_CR2;
-	volatile uint32_t I2C_OAR1;
-	volatile uint32_t I2C_OAR2;
-	volatile uint32_t I2C_DR;
-	volatile uint32_t I2C_SR1;
-	volatile uint32_t I2C_SR2;
-	volatile uint32_t I2C_CCR;
-	volatile uint32_t I2C_TRISE;
-	volatile uint32_t I2C_FLTR;
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t OAR1;
+	volatile uint32_t OAR2;
+	volatile uint32_t DR;
+	volatile uint32_t SR1;
+	volatile uint32_t SR2;
+	volatile uint32_t CCR;
+	volatile uint32_t TRISE;
+	volatile uint32_t FLTR;
 
 };
 /**
