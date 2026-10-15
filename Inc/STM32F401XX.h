@@ -129,6 +129,24 @@ struct SPI_RegMap_t
 };
 
 /**
+ * @brief I2C register map structure.
+ */
+typedef struct I2C_RegMap_t I2C_RegMap_t;
+struct I2C_RegMap_t
+{
+	volatile uint32_t I2C_CR1;
+	volatile uint32_t I2C_CR2;
+	volatile uint32_t I2C_OAR1;
+	volatile uint32_t I2C_OAR2;
+	volatile uint32_t I2C_DR;
+	volatile uint32_t I2C_SR1;
+	volatile uint32_t I2C_SR2;
+	volatile uint32_t I2C_CCR;
+	volatile uint32_t I2C_TRISE;
+	volatile uint32_t I2C_FLTR;
+
+};
+/**
  * @defgroup Bus_Base_Addresses Bus base addresses
  * @{
  */
@@ -157,6 +175,9 @@ struct SPI_RegMap_t
 #define SPI2_BASEADDR		0x40003800U
 #define SPI3_BASEADDR		0x40003C00U
 #define SPI4_BASEADDR		0x40013400U
+#define I2C1_BASEADDR		0x40005400U
+#define I2C2_BASEADDR		0x40005800U
+#define I2C3_BASEADDR		0x40005C00U
 /**
  * @}
  */
@@ -179,6 +200,9 @@ struct SPI_RegMap_t
 #define SPI2	((SPI_RegMap_t*)SPI2_BASEADDR)
 #define SPI3	((SPI_RegMap_t*)SPI3_BASEADDR)
 #define SPI4	((SPI_RegMap_t*)SPI4_BASEADDR)
+#define I2C1	((I2C_RegMap_t*)I2C1_BASEADDR)
+#define I2C2	((I2C_RegMap_t*)I2C2_BASEADDR)
+#define I2C3	((I2C_RegMap_t*)I2C3_BASEADDR)
 /**
  * @}
  */
@@ -198,6 +222,9 @@ struct SPI_RegMap_t
 #define SPI2_CLK_EN()	(RCC->APB1ENR |= 0x1U << 14)
 #define SPI3_CLK_EN()	(RCC->APB1ENR |= 0x1U << 15)
 #define SPI4_CLK_EN()	(RCC->APB2ENR |= 0x1U << 13)
+#define I2C1_CLK_EN()	(RCC->AP1ENR |= 0x1U << 21)
+#define I2C2_CLK_EN()	(RCC->AP1ENR |= 0x1U << 22)
+#define I2C3_CLK_EN()	(RCC->AP1ENR |= 0x1U << 23)
 /**
  * @}
  */
